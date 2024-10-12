@@ -1,0 +1,124 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* INICIO DO ESTILO HOME */
+
+ #FundoHome {
+    /* Defina um fundo para a página */
+    background-image: url(../public/img/PlanoDeFundoMusical.jpg); /* Adicione sua imagem de fundo */
+    background-size: cover; /* Faz com que a imagem cubra todo o fundo */
+    margin: 0; /* Remove margens padrão */
+    position: relative; /* Necessário para o efeito de desfoque */
+}
+
+#main {
+    display: flex; /* Ativa o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 80vh; /* Define a altura para ocupar toda a tela */
+    position: relative; /* Necessário para o efeito de desfoque */
+    z-index: 1; /* Para que o texto fique acima do fundo desfocado */
+    color: white; /* Define a cor do texto */
+}
+
+.TextMenu {
+    display: flex; /* Ativa o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    position: relative; /* Necessário para o efeito de desfoque */
+    z-index: 1; /* Para que o texto fique acima do fundo desfocado */
+    color: white; /* Define a cor do texto */
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.TextMenu::before {
+    content: ''; /* Necessário para o pseudo-elemento */
+    position: absolute; /* Posiciona em relação ao link */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    width: 0; /* Começa com largura 0 */
+    height: 250%; /* Ocupa toda a altura do texto */
+    background-color: #9400D3; /* Cor do fundo */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: width 0.3s ease, left 0.3s ease; /* Transições suaves */
+    z-index: -1; /* Coloca atrás do texto */
+    transform: translate(-50%, -50%); /* Centraliza o pseudo-elemento */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com opacidade */
+}
+
+/* Efeito ao passar o mouse */
+.TextMenu:hover {
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+.TextMenu:hover::before {
+    width: 120%; /* Expande para a largura total do link */
+    left: 50%; /* Mantém a posição para o centro */
+}
+
+
+.TextMenuCenter {
+    position: relative;
+    color: white; /* Cor do texto */
+    z-index: 1; /* Certifica-se que o texto fica acima do fundo */
+    font-size: 100px;
+    transition: color 0.3s ease; /* Transição suave da cor do texto */
+    display: inline-block; /* Para que o pseudo-elemento funcione corretamente */
+}
+
+.TextMenuCenter::before {
+    content: ''; /* Cria um pseudo-elemento vazio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com opacidade */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); /* Box-shadow para dar profundidade */
+    z-index: -1; /* Mantém o fundo atrás do texto */
+    border-radius: 10px; /* Se você quiser bordas arredondadas */
+    padding: 10px; /* Ajuste de acordo com a necessidade */
+}
+
+#FundoHome::before {
+    content: ""; /* Cria um pseudo-elemento */
+    position: fixed; /* Fica fixo na tela */
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-image: url(../public/img/PlanoDeFundoMusical.jpg); /* Usa a mesma imagem de fundo */
+    filter: blur(2px); /* Desfoca o fundo */
+    z-index: 0; /* Para que fique atrás do texto */
+}
+
+#navbar {
+    background-color: #A020F0; /* Cor da navbar */
+    width: 100%;
+    height: 100px;
+    position: relative; /* Necessário para o efeito de desfoque */
+    z-index: 1; /* Para que o texto fique acima do fundo desfocado */
+}
+
+#navbar::after {
+    content: ''; /* Necessário para o pseudo-elemento */
+    position: absolute; /* Posiciona em relação à navbar */
+    top: 100%; /* Coloca o pseudo-elemento abaixo da navbar */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    height: 30px; /* Altura da sombra */
+    background: rgba(0, 0, 0, 0.7); /* Cor do desfoque (sombra escura com opacidade) */
+    filter: blur(20px); /* Aplica o desfoque */
+    z-index: -1; /* Mantém atrás da navbar */
+}
+
+.links{
+    display: flex; /* Isso coloca os links em linha */
+    gap: 150px; /* Espaçamento entre os links, ajuste conforme necessário */
+    justify-content: center;
+    padding: 40px;
+}
+/* FIM DO ESTILO HOME */
